@@ -1,0 +1,52 @@
+.ticket-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+  height: 184px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  .ticket-card__title {
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2196f3;
+    .ticket-card__carrier-logo {
+      width: 110px;
+      height: 36px;
+    }
+  }
+  .ticket-card__info_destination {
+    display: flex;
+    justify-content: space-between;
+    height: 35%;
+    .ticket-card__info_destination__block {
+      width: 33%;
+    }
+  }
+  .ticket-card__info_destination-back {
+    display: flex;
+    justify-content: space-between;
+    height: 35%;
+    .ticket-card__info_destination-back__block {
+      width: 33%;
+    }
+  }
+}
+
+.title {
+  font-size: 12px;
+  color: #a0b0b9;
+}
+
+.info {
+  font-size: 14px;
+  color: #4a4a4a;
+  font-weight: 600;
+}

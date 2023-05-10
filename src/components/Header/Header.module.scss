@@ -1,0 +1,23 @@
+.header {
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    color: blanchedalmond;
+    background-image: url("../assets/Logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 100px;
+  }
+}
