@@ -1,7 +1,9 @@
 import React from 'react';
-import classes from './Main.module.scss';
+
 import PriceFastSwitcher from '../PriceSwitcher/PriceSwitcher';
 import TicketsList from '../TicketsList/TicketsList';
+
+import classes from './Main.module.scss';
 
 const Main = () => {
   return (
