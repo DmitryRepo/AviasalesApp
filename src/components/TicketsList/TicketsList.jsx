@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import NoTicketsCard from '../NoTicketsCard/NoTicketsCard';
 import TicketCard from '../TicketCard/TicketCard';
 import * as actions from '../../redux/actions/actions';
 import Spinner from '../Spinner/Spinner';
@@ -27,17 +28,17 @@ class TicketsList extends Component {
   }
 
   renderTicketsList = () => {
-    let { tickets, howManyTicketsToShow } = this.props;
-    if (tickets.length > 0) {
-      let nt = tickets.filter((item) => item.visibility === true);
-      return nt.map((item, i) => {
-        if (i < howManyTicketsToShow) {
-          return <TicketCard key={item.id} ticketData={item} />;
-        }
-        return false;
-      });
+    let { tickets, howManyTicketsToShow, uploaded } = this.props;
+    const newTicketsData = tickets.filter((item) => item.visibility === true);
+    if (newTicketsData.length === 0 && uploaded) {
+      return <NoTicketsCard />;
     }
-    return <div>nothing</div>;
+    return newTicketsData.map((item, i) => {
+      if (i < howManyTicketsToShow) {
+        return <TicketCard key={item.id} ticketData={item} />;
+      }
+      return false;
+    });
   };
 
   render() {

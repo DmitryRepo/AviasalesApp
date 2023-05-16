@@ -23,42 +23,39 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  if (state === undefined) return 0;
+  if (state === undefined) return initialState;
   switch (action.type) {
     case actionTypes.GET_SEARCH_ID:
       return {
         ...state,
         searchId: action.id,
-      };
-
-    case 'GET_TICKETS':
-      return {
-        ...state,
-        ticketsData: action.ticketsData,
-        loading: false,
-        uploaded: action.uploaded,
-        randomValue: state.randomValue + 1,
+        uploading: true,
       };
     case actionTypes.SUCCESS_FETCHING:
       return {
         ...state,
         ticketsData: [...state.ticketsData, ...action.ticketsData].map((item) => {
-          item.visibility = true;
+          const newItem = item;
+          newItem.visibility = true;
           if (!item.id) {
-            item.id = uuidv4();
+            newItem.id = uuidv4();
           }
-          return item;
+          return newItem;
         }),
+        ticketsCount: [...state.ticketsData, ...action.ticketsData].length,
+        uploading: true,
         loading: false,
       };
     case actionTypes.ERROR_FETCHING:
       return {
         ...state,
         error: state.error + 1,
+        loading: false,
       };
     case actionTypes.STOP_FETCHING:
       return {
         ...state,
+        uploading: false,
         uploaded: true,
       };
     case actionTypes.SHOW_MORE_TICKETS:

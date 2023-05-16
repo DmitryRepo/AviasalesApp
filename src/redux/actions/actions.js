@@ -1,4 +1,4 @@
-import transformFiltersStatus from '../../utils/transformFiltersSatus';
+import transformFiltersStatus from '../../utils/transformFiltersStatus';
 import TiketsApi from '../../servises/TiketsApi';
 
 import actionTypes from './actionsTypes';
@@ -88,7 +88,6 @@ export const sortByFast = () => {
 
 export const changeFilterStatus = (filter, filtersStatus) => (dispatch) => {
   const newFiltersStatus = transformFiltersStatus(filter, filtersStatus);
-  console.log(newFiltersStatus);
   const filters = {
     all: () => dispatch(filterByAll(newFiltersStatus)),
     zero: () => dispatch(filterByZero(newFiltersStatus)),

@@ -27,7 +27,7 @@ const Navbar = ({ filtersStatus, changeFilterStatus }) => {
     <div className={classes.navbar}>
       <form className={classes.form}>
         <fieldset className={classes['form-group']}>
-          <legend className={`mt-6 ${classes.title}`}>Количество пересадок</legend>
+          <legend className={`mt-6 ${classes.title}`}>KOЛИЧЕСТВО ПЕРЕСАДОК</legend>
           {renderFilters(filtersStatus)}
         </fieldset>
       </form>

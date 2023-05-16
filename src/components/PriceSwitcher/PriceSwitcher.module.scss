@@ -1,11 +1,24 @@
 .fast-fly-switcher {
   display: flex;
   justify-content: space-between;
-  gap: 0.5rem;
-  .btn {
+  .btn-primary {
     color: #fff;
     width: 49.5%;
     height: 50px;
     border: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
   }
-}
+  .btn-light {
+    color: rgb(29, 26, 26);
+    width: 49.5%;
+    height: 50px;
+    border: 0.1px solid #DFE5EC;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background-image:none;
+    background-color:White;
+  }
+  }  

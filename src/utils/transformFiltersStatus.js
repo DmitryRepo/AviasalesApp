@@ -1,6 +1,5 @@
 const transformFiltersStatus = (filter, obj) => {
   const newObj = Object.assign(obj);
-  console.log(newObj);
   if (obj.all === true && filter === 'all') {
     const arr = Object.entries(newObj).map((item) => [item[0], false]);
     return Object.fromEntries(arr);
